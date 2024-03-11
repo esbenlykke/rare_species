@@ -23,10 +23,6 @@ filtered_vanda <-
   filter(art_latin %in% redlist$videnskabeligt_navn &
     year(dmy_hms(dato)) >= 2013 & year(dmy_hms(dato)) <= 2023)
 
-# filtered_vanda %>%
-#   select(art_latin, dato, kommune, sted_id, stedtekst) %>%
-#   write_delim("data/filter_vanda.csv", delim = ";")
-
 rare_count <-
   filtered_vanda %>%
   group_by(kommune) %>%
